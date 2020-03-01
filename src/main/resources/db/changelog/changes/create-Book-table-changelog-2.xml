@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="admin" id="2">
+        <createTable tableName="book">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKeyName="PK_book" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="book_category_id" type="INT">
+                <constraints
+                        foreignKeyName="FK_book_category"
+                        references="book_category(id)"
+                        referencedTableName="book_category"
+                        nullable="false"
+                />
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="book"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
