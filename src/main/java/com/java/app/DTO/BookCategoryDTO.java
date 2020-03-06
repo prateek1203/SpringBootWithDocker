@@ -2,7 +2,6 @@ package com.java.app.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.java.app.entity.Book;
 
 import java.io.Serializable;
 import java.util.HashSet;

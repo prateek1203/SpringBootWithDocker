@@ -1,0 +1,27 @@
+version: "3"
+services:
+  spring-boot-mysql:
+    image: spring-boot-mysql
+    ports:
+      - "8089:8089"
+    container_name: spring-boot-mysql
+    build:
+      context: target
+      dockerfile: Dockerfile
+    networks:
+      - spring-boot-mysql
+    depends_on:
+      - mysql_container_spring
+
+  mysql_container_spring:
+    image: mysql:8
+    restart: always
+    container_name: mysql_container_spring
+    networks:
+      - spring-boot-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Mcaprateek2013#
+      - MYSQL_DATABASE=testDB
+
+networks:
+  spring-boot-mysql:
