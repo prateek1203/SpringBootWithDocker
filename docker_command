@@ -1,0 +1,39 @@
+Docker images
+Docker container ls
+Docker ps -a //running docker
+
+Stop container
+
+Docker stop container name  //you can get id by running docker container command
+docker start <container name>
+Docker rm <container name> //remove
+Docker kill <container id> //kill docker container
+
+
+Remove container
+
+Docker container rm container name
+Docker kill <container id>
+
+Docker container prue // removed stopped container
+
+Remove images
+
+Docker image  rm  <image_id>  // image id can be get from docker images command
+
+
+Creating image
+
+docker build . -t spring-boot-mysql //need to run from project base dir
+
+
+Run mysql inside docker
+
+docker pull mysql
+
+Docker run --name <image_name>   -e MYSQL_ROOT_PASSWORD=<password>  -e MYSQL_DATABASE=<db_name>
+-d mysql:<tag>  //ex:- tag is usually version name. latest can be used here
+
+Connect to AWS free Unix instance
+
+ssh -i C:\Users\prateemi\Downloads\prateek_key.pem ec2-user@ec2-13-59-189-112.us-east-2.compute.amazonaws.com
