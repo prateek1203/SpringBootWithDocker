@@ -30,4 +30,12 @@ public class BookCategoryDTO  implements Serializable {
     public void setBooks(Set<BookDTO> books) {
         this.books = books;
     }
+
+    @Override
+    public String toString() {
+        return "BookCategoryDTO{" +
+                "name='" + name + '\'' +
+                ", books=" + books +
+                '}';
+    }
 }

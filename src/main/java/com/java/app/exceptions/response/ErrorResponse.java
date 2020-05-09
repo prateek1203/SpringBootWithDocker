@@ -1,14 +1,20 @@
 package com.java.app.exceptions.response;
 
+import lombok.NoArgsConstructor;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement(name = "error")
+@NoArgsConstructor
 public class ErrorResponse {
     public ErrorResponse(String message, List<String> details) {
         super();
         this.message = message;
         this.details = details;
+    }
+
+    public ErrorResponse() {
     }
 
     private String message;
@@ -30,3 +36,4 @@ public class ErrorResponse {
         this.details = details;
     }
 }
+

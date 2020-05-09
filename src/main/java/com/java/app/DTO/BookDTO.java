@@ -26,4 +26,12 @@ public class BookDTO {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
+
+    @Override
+    public String toString() {
+        return "BookDTO{" +
+                "authorName='" + authorName + '\'' +
+                ", bookTitle='" + bookTitle + '\'' +
+                '}';
+    }
 }
